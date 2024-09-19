@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button onclick="toggleTheme()">Toggle Theme</button>
+        </div>
+        
+        <!-- Display -->
+        <div class="display" id="display">0</div>
+
+        <!-- Keypad for basic operations -->
+        <div class="keypad" id="basic-keypad">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="input('7')">7</button>
+            <button onclick="input('8')">8</button>
+            <button onclick="input('9')">9</button>
+            <button onclick="input('/')">/</button>
+            <button onclick="input('4')">4</button>
+            <button onclick="input('5')">5</button>
+            <button onclick="input('6')">6</button>
+            <button onclick="input('*')">*</button>
+            <button onclick="input('1')">1</button>
+            <button onclick="input('2')">2</button>
+            <button onclick="input('3')">3</button>
+            <button onclick="input('-')">-</button>
+            <button onclick="input('0')">0</button>
+            <button onclick="input('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="input('+')">+</button>
+        </div>
+
+        <!-- Scientific keypad -->
+        <div class="keypad" id="scientific-keypad">
+            <button onclick="calculateSin()">sin</button>
+            <button onclick="calculateCos()">cos</button>
+            <button onclick="calculateTan()">tan</button>
+            <button onclick="calculateLog()">log</button>
+            <button onclick="calculateExp()">exp</button>
+        </div>
+
+        <!-- Unit conversion -->
+        <div id="conversion">
+            <select id="unit-type">
+                <option value="length">Length</option>
+                <option value="temperature">Temperature</option>
+            </select>
+            <input type="text" id="unit-input" placeholder="Enter value">
+            <button onclick="convertUnit()">Convert</button>
+            <div id="conversion-result"></div>
+        </div>
+
+        <!-- Graph Plotter -->
+        <div id="graph-plotter">
+            <input type="text" id="function-input" placeholder="Enter function (e.g., sin(x))">
+            <button onclick="plotGraph()">Plot Graph</button>
+            <div id="graph-container"></div>
+        </div>
+
+        <!-- History -->
+        <div id="history">
+            <h3>History</h3>
+            <ul id="history-list"></ul>
+            <button onclick="clearHistory()">Clear History</button>
+        </div>
+    </div>
+
+    <script src="scripts/calculator.js"></script>
+</body>
+</html>
